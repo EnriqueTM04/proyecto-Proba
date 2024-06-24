@@ -1,0 +1,354 @@
+/* CSS en main.css */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: #ffffff;
+    margin: 0;
+    height: 100vh;
+    color: #fff;
+    /* Color de letra blanco para todos los elementos */
+}
+#contenedorPrincipal {
+    position: relative;
+    height: 100vh; /* Asegúrate de que el contenedor ocupe toda la altura del viewport */
+    background-color: #212121; /* Solo para propósitos de demostración */
+}
+
+
+.containerPulse {
+    width: 100%;
+    height: 100%;
+    background: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.pulse {
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    background-color: #212121;
+}
+
+.pulse:after {
+    content: '';
+    display: block;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200px 100px'><polyline fill='none' stroke-width='3px' stroke='white' points='2.4,58.7 70.8,58.7 76.1,46.2 81.1,58.7 89.9,58.7 93.8,66.5 102.8,22.7 110.6,78.7 115.3,58.7 126.4,58.7 134.4,54.7 142.4,58.7 197.8,58.7'/></svg>") 0 0 no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: pulse-animation 2s infinite linear;
+}
+
+@keyframes pulse-animation {
+    0% {
+        clip: rect(0, 0, 100px, 0);
+    }
+
+    10% {
+        clip: rect(0, 66.6666666667px, 100px, 0);
+    }
+
+    38% {
+        clip: rect(0, 133.3333333333px, 100px, 0);
+    }
+
+    48% {
+        clip: rect(0, 200px, 100px, 0);
+    }
+
+    52% {
+        clip: rect(0, 200px, 100px, 0);
+    }
+
+    62% {
+        clip: rect(0, 200px, 100px, 66.6666666667px);
+    }
+
+    90% {
+        clip: rect(0, 200px, 100px, 133.3333333333px);
+    }
+
+    100% {
+        clip: rect(0, 200px, 100px, 200px);
+    }
+}
+
+.pulse:before {
+    content: '';
+    background: #444;
+    position: absolute;
+    z-index: -1;
+    left: 2px;
+    right: 2px;
+    bottom: 0;
+    top: 16px;
+    margin: auto;
+    height: 3px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+input[type="number"] {
+    min-width: 50px;
+}
+
+.heart-container {
+    display: none;
+    /* Ocultar inicialmente */
+    position: relative;
+    width: 100px;
+    height: 160px;
+    margin: 30vh auto;
+    /* Ajuste para centrar verticalmente */
+}
+
+.heart {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+    animation: heartbeat 1s infinite alternate;
+    cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 100px 100px 0 0;
+    position: absolute;
+    background-color: #e74c3c;
+    box-shadow: -10px 6px 10px -2px rgba(0, 0, 0, 0.35);
+}
+
+.heart:before {
+    left: 44%;
+    top: 0;
+    transform: scale(-1) rotate(225deg);
+}
+
+.heart:after {
+    left: 0;
+    top: 0;
+    transform: scale(-1) rotate(-225deg);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart:hover:before,
+.heart:hover:after {
+    background-color: unset;
+    box-shadow: none;
+}
+
+.heart:hover:before {
+    border: 2px dashed #ff0000;
+}
+
+.heart:hover:after {
+    border: 2px dashed #ffbf00;
+}
+
+/* Estilo adicional para el botón */
+.scroll-btn {
+    margin-top: 20px;
+}
+
+#seccionBonita {
+    display: none;
+    margin: auto;
+}
+
+#containerCharts {
+    background: white;
+    width: 100vw; /* Asegura que ocupe el 100% del viewport width */
+    padding: 20px;
+    
+}
+body {
+    background-color: #f2f2f2;
+}
+
+.section {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Aquí puedes añadir estilos adicionales si es necesario */
+body {
+    background-color: #f8f9fa;
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #666;
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
