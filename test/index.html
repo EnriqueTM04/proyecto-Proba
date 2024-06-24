@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h2>Test</h2>
-        <form>
+        <form id="opcionMultipleForm" action="indexado.mtml">
             <!-- Pregunta 1 -->
             <div class="form-group">
                 <label>1. Edad</label>
@@ -146,9 +146,11 @@
             <!-- Botón de envío -->
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
+        <p>El resultado es: <span id="totalScore"></span> </p>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="test_response.js"></script>
 </body>
 </html>
